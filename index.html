@@ -18,7 +18,6 @@
                 padding-bottom: 20px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
@@ -27,7 +26,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -76,10 +75,10 @@
    	// 指定箇所のみ表示
    		document.getElementById(tabname).style.display = 'block';
    		
-   		document.getElementById('tablabel1').style.borderBottom = "solid 3px #EEEEEE";
-   		document.getElementById('tablabel2').style.borderBottom = "solid 3px #EEEEEE";
+   		document.getElementById('tablabel1').style.borderBottom = "solid 5px #EEEEEE";
+   		document.getElementById('tablabel2').style.borderBottom = "solid 5px #EEEEEE";
    		
-   		document.getElementById(tablabel).style.borderBottom = "solid 3px #00B4FF";
+   		document.getElementById(tablabel).style.borderBottom = "solid 5px #00B4FF";
    		
 }
 // --></script>
@@ -90,10 +89,70 @@
       <a href="#tab2" id="tablabel2" class="tab2" onclick="ChangeTab('tab2','tablabel2'); return false;" style="font-size:20px">イベントを探す</a>
    </p>
    <div id="tab1" class="tab">
+   <form class="form-horizontal">
+   <fieldset>
+      <div class="container">
+      	<div class="form-group">
+        	<input type="text" class="form-control" id="inputEventName" placeholder="企業名・業種などを入力 " style="margin-left:40px;width:480px;float:left;">
+      		<button type="submit" class="btn btn-primary"style="margin-left:41px;float:left;">検索</button>
+    </div>
+      </div>
+     </fieldset>
+	</form>
+	
+	<div class="btn-group" style="margin-top:10px;margin-left:40px;float:left;">
+  			<a href="#" class="btn btn-default"style="width:130px;">開催地域</a>
+	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+	 			 <ul class="dropdown-menu">
+			    <li><a href="#">関東</a></li>
+			    <li><a href="#">関西</a></li>
+			  </ul>
+	</div>	
+	<div class="btn-group" style="margin-top:10px;margin-left:10px;float:left;">
+  			<a href="#" class="btn btn-default"style="width:130px;">業種</a>
+	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+	 			 <ul class="dropdown-menu">
+			    <li><a href="#">関東</a></li>
+			    <li><a href="#">関西</a></li>
+			  </ul>
+	</div>
+	<div class="btn-group" style="margin-top:10px;margin-left:10px;float:left;">
+  			<a href="#" class="btn btn-default"style="width:130px;">開催時期</a>
+	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+	 			 <ul class="dropdown-menu">
+			    <li><a href="#">関東</a></li>
+			    <li><a href="#">関西</a></li>
+			  </ul>
+	</div>
+	<button type="submit" class="btn btn-primary"style="margin-top:10px;margin-left:40px;float:left;">検索</button>		
+   
+	<div class="form-group">
+	<div class="col-lg-10" >
+   	<div class="checkbox">
+   			<label style="margin-top:10px;margin-left:10px;float:left;">
+            	<input type="checkbox"> Checkbox
+          	</label>
+        </div>
+    <div class="checkbox">
+   			<label style="margin-top:10px;margin-left:50px;float:left;">
+            	<input type="checkbox"  > Checkbox
+          	</label>
+        </div>
+    <div class="checkbox">
+   			<label style="margin-top:10px;margin-left:50px;float:left;">
+            	<input type="checkbox" > Checkbox
+          	</label>
+    </div>
+    </div>         
+   </div>
+</div>
+   	
+
+   <div id="tab2" class="tab">
       <div class="container">
     	<form action="" method="get" id="searchform">
     		<label for="s" class="assistive-text"></label>
-    		<input type="text" name="s" id="s" placeholder="企業名・業種などを入力" />
+    		<input type="text" name="s" id="s" placeholder="イベント名を入力" style="width:403px;margin-top: 20px;margin-bottom: 20px;"/>
     		<input type="submit" value="検索" style="color:#FFFFFF;background-color:#00B4FF;border-color:#00B4FF"/>
     		
     		<div class="selected">
@@ -125,34 +184,30 @@
 			
 	</div>
    </div>
-   <div id="tab2" class="tab">
-      <p>イベントを探す</p>
-   </div>
    <style type="text/css"><!--
 	/* ▼(A)表示領域全体 */
-	div.tabbox { margin: 0px; padding: 0px; width: 580px; }
+	div.tabbox { margin: 0px; padding:0px; width: 790px;}
 
 	/* ▼(B)タブ部分 */
-	p.tabs { margin: 0px; padding: 0px; }
+	p.tabs { margin: 0px; padding: 45px; }
 	p.tabs a {
    		/* ▼(B-2)リンクをタブのように見せる */
    		display: block; width: 14em; float: left;
-   		margin: 0px 1px 0px 0px; padding: 3px;
+   		margin: 0px; padding: 3px;
    		text-align: center;
    		border-radius: 12px 12px 0px 0px; /* 角を丸くする */
-   		box-shadow:5px 5px 3px #EEEEEE;
-    	-moz-box-shadow:5px 5px 3px #EEEEEE;
-    	-webkit-box-shadow:5px 5px 3px #EEEEEE;
+   		
 	}
 	/* ▼(B-3)各タブの配色 */
-	p.tabs a.tab1 { background-color: #FFFFFF; color: #515151; border-bottom: solid 3px #00B4FF;}
-	p.tabs a.tab2 { background-color: #FFFFFF; color: #515151; border-bottom: solid 3px #EEEEEE;}
+	p.tabs a.tab1 { background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #00B4FF;}
+	p.tabs a.tab2 { background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #EEEEEE;}
 	p.tabs a:hover { color: #00B4FF; }
 
 	/* ▼(C)タブ中身のボックス */
 	div.tab {
    	/* ▼(C-2)ボックス共通の装飾 */
-   		height: 150px; overflow: auto; clear: left;
+   		height: 350px; overflow: hidden; clear: left;
+   		padding:45px;
    		box-shadow:5px 5px 3px #EEEEEE;
     	-moz-box-shadow:5px 5px 3px #EEEEEE;
     	-webkit-box-shadow:5px 5px 3px #EEEEEE;
