@@ -4,11 +4,46 @@
    Author's custom styles
    ========================================================================== */
 
+	body {
+		padding-top: 50px;
+		padding-bottom: 20px;
+	}
 
 
 
+	/* ▼(A)表示領域全体 */
+	div.tabbox { margin-left:15%; padding:0px; width: 790px;}
 
+	/* ▼(B)タブ部分 */
+	p.tabs { margin: 0px; padding: 45px; }
+	p.tabs a {
+   		/* ▼(B-2)リンクをタブのように見せる */
+   		display: block; width: 14em; float: left;
+   		margin: 0px; padding: 3px;
+   		text-align: center;
+   		border-radius: 12px 12px 0px 0px; /* 角を丸くする */
+   		
+	}
+	/* ▼(B-3)各タブの配色 */
+	p.tabs a.tab1 { margin-left:auto; background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #00B4FF;}
+	p.tabs a.tab2 { background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #EEEEEE;}
+	p.tabs a:hover { color: #00B4FF; }
 
+	/* ▼(C)タブ中身のボックス */
+	div.tab {
+   	/* ▼(C-2)ボックス共通の装飾 */
+   		height: 350px; overflow: hidden; clear: left;
+   		padding:45px;
+   		
+   		box-shadow:5px 5px 3px #EEEEEE;
+    	-moz-box-shadow:5px 5px 3px #EEEEEE;
+    	-webkit-box-shadow:5px 5px 3px #EEEEEE;
+    	
+	}
+	/* ▼(C-3)各ボックスの配色 */
+	div#tab1 { border: 2px solid #FFFFFF; background-color: #FFFFFF; }
+	div#tab2 { border: 2px solid #FFFFFF; background-color: #FFFFFF; }
+	div.tab p { margin: 0.5em; }
 
 
 

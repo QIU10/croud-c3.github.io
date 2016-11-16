@@ -12,17 +12,11 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body>
+    <body onload="init();">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -42,17 +36,23 @@
           </p>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          <form id="navbar-form" class="navbar-form navbar-right" role="form">
+            <p id="student">ようこそ，gakuseiさん</p>
+            <p id="company">ようこそ，kigyoさん</p>
             <div class="form-group">
-              <input type="text" placeholder="UserID" class="form-control">
+              <input type="text" id="user_id" placeholder="UserID" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" id="password" placeholder="Password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-default">Sign in</button>
-            <p>
-            	<a href="signup.html" style="color: #fff">アカウントを持っていませんか？</a>
+            <button id="signin" type="button" class="btn btn-default" onclick="judge();">Sign in</button>
+            <p id="signup">
+            	<a href="signup.html">アカウントを持っていませんか？</a>
             </p>
+            <p id="mypage">
+              <a href="mypage.html">マイページ</a>
+            </p>
+            <p id="false-parameter"><font color="ff0000">IDまたはパスワードが間違っています</font></p>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
@@ -131,17 +131,17 @@
 	<div class="col-lg-10" >
    	<div class="checkbox">
    			<label style="margin-top:10px;margin-left:10px;float:left;">
-            	<input type="checkbox"> Checkbox
+            	<input type="checkbox"> 女性社員
           	</label>
         </div>
     <div class="checkbox">
    			<label style="margin-top:10px;margin-left:50px;float:left;">
-            	<input type="checkbox"  > Checkbox
+            	<input type="checkbox"  > Uターン
           	</label>
         </div>
     <div class="checkbox">
    			<label style="margin-top:10px;margin-left:50px;float:left;">
-            	<input type="checkbox" > Checkbox
+            	<input type="checkbox" > 学部１・２回生OK
           	</label>
     </div>
     </div>         
@@ -150,76 +150,42 @@
    	
 
    <div id="tab2" class="tab">
+   <form class="form-horizontal">
+   <fieldset>
       <div class="container">
-    	<form action="" method="get" id="searchform">
-    		<label for="s" class="assistive-text"></label>
-    		<input type="text" name="s" id="s" placeholder="イベント名を入力" style="width:403px;margin-top: 20px;margin-bottom: 20px;"/>
-    		<input type="submit" value="検索" style="color:#FFFFFF;background-color:#00B4FF;border-color:#00B4FF"/>
-    		
-    		<div class="selected">
-				<select name="place" style="width:100px;background-color:#EEEEEE">
-				<option value="地域">地域</option>
-				<option value="関東">関東</option>
-				<option value="関西">関西</option>
-				<option value="サンプル4">ブラジル</option>
-				<option value="サンプル5">北欧</option>
-				</select>
-				<select name="work" style="width: 200px;background-color:#EEEEEE">
-				<option value="業種">業種</option>
-				<option value="金融">金融</option>
-				<option value="食品">食品</option>
-				<option value="IT">IT</option>
-				<option value="商業">商業</option>
-				</select>
-				<select name="season" style="width: 100px;background-color:#EEEEEE">
-				<option value="開催時期">開催時期</option>
-				<option value="1週間以内">一週間以内</option>
-				<option value="1か月以内">1か月以内</option>
-				<option value="3か月以内">3か月以内</option>
-				<option value="未定">未定</option>
-				</select>
-				<input type="submit" value="検索" style="color:#FFFFFF;background-color:#00B4FF;border-color:#00B4FF"/>
+      	<div class="form-group">
+    		<input type="text" class="form-control" id="inputEventName" placeholder="企業名・業種などを入力 " style="margin-left:40px;width:480px;float:left;">
+      		<button type="submit" class="btn btn-primary"style="margin-left:41px;float:left;">検索</button>
+    </div>
+      </div>
+     </fieldset>
+	</form>
+	
+	<div class="btn-group" style="margin-top:10px;margin-left:40px;float:left;">
+  			<a href="#" class="btn btn-default"style="width:130px;">地域</a>
+	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+	 			 <ul class="dropdown-menu">
+			    <li><a href="#">東京</a></li>
+			    <li><a href="#">大阪</a></li>
+			    <li><a href="#">名古屋</a></li>
+			  </ul>
+	</div>	
+	<div class="btn-group" style="margin-top:10px;margin-left:10px;float:left;">
+  			<a href="#" class="btn btn-default"style="width:130px;">業種</a>
+	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
+	 			 <ul class="dropdown-menu">
+			    <li><a href="#">金融</a></li>
+			    <li><a href="#">食品</a></li>
+			    <li><a href="#">IT</a></li>
+			    <li><a href="#">商業/a></li>
+			  </ul>
+	</div>
+	<button type="submit" class="btn btn-primary"style="margin-top:10px;margin-left:40px;float:left;">検索</button>
 			</div>	
-    		
-		</form>
 			
 	</div>
    </div>
-   <style type="text/css"><!--
-	/* ▼(A)表示領域全体 */
-	div.tabbox { margin-left:15%; padding:0px; width: 790px;}
 
-	/* ▼(B)タブ部分 */
-	p.tabs { margin: 0px; padding: 45px; }
-	p.tabs a {
-   		/* ▼(B-2)リンクをタブのように見せる */
-   		display: block; width: 14em; float: left;
-   		margin: 0px; padding: 3px;
-   		text-align: center;
-   		border-radius: 12px 12px 0px 0px; /* 角を丸くする */
-   		
-	}
-	/* ▼(B-3)各タブの配色 */
-	p.tabs a.tab1 { margin-left:auto; background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #00B4FF;}
-	p.tabs a.tab2 { background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #EEEEEE;}
-	p.tabs a:hover { color: #00B4FF; }
-
-	/* ▼(C)タブ中身のボックス */
-	div.tab {
-   	/* ▼(C-2)ボックス共通の装飾 */
-   		height: 350px; overflow: hidden; clear: left;
-   		padding:45px;
-   		
-   		box-shadow:5px 5px 3px #EEEEEE;
-    	-moz-box-shadow:5px 5px 3px #EEEEEE;
-    	-webkit-box-shadow:5px 5px 3px #EEEEEE;
-    	
-	}
-	/* ▼(C-3)各ボックスの配色 */
-	div#tab1 { border: 2px solid #FFFFFF; background-color: #FFFFFF; }
-	div#tab2 { border: 2px solid #FFFFFF; background-color: #FFFFFF; }
-	div.tab p { margin: 0.5em; }
-	--></style>
 	</div>
 
 	<script type="text/javascript"><!--
@@ -536,26 +502,32 @@
               			<!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
               			<p><a style="width: 200 height: 20" href="">イベントリスト</a></p>
 					</div>
-					<div class="col-md-12">
+          <hr>
+          <hr>
+					<div id="manual" class="col-md-12">
               			<!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
               			<p><a style="width: 200 height: 20" href="">使い方</a></p>
 					</div>
-					<div class="col-md-12">
+					<div id="rate_plan" class="col-md-12">
               			<!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
               			<p><a style="width: 200 height: 20" href="">料金プラン</a></p>
 					</div>
-					<div class="col-md-12">
+					<div id="cooperation_companies" class="col-md-12">
               			<!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
               			<p><a style="width: 200 height: 20" href="">連携企業</a></p>
 					</div>
-					<div class="col-md-12">
+					<div id="senior_voices" class="col-md-12">
               			<!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
               			<p><a style="width: 200 height: 20" href="">先輩たちの声</a></p>
 					</div>
-					<div class="col-md-12">
+					<div id="job_hunting_infomation" class="col-md-12">
               			<!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
               			<p><a style="width: 200 height: 20" href="">就職情報</a></p>
 					</div>
+					<div id="mypage2" class="col-md-12">
+                    <!--<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>-->
+                    	<p><a style="width: 200 height: 20" href="mypage.html">マイページ</a></p>
+          			</div>
 				</div>
 			</div>
 		</div>
