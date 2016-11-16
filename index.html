@@ -37,7 +37,7 @@
           </button>
           <p>
           	<a href="index.html">
-          		<img style="margin-top: 10px" src="image/logo.jpg" />
+          		<img style="margin-top: 10px" src="image/logo.gif" />
           	</a>
           </p>
         </div>
@@ -85,8 +85,9 @@
 
 	<div class="tabbox">
    <p class="tabs">
-      <a href="#tab1" id="tablabel1" class="tab1" onclick="ChangeTab('tab1','tablabel1'); return false;" style="font-size:20px">企業を探す</a>
-      <a href="#tab2" id="tablabel2" class="tab2" onclick="ChangeTab('tab2','tablabel2'); return false;" style="font-size:20px">イベントを探す</a>
+      <a id="tablabel1" class="tabL" onclick="ChangeTab('tab1','tablabel1'); return false;" style="font-size:20px">イベントを探す</a>
+      <a id="tablabel2" class="tabL" onclick="ChangeTab('tab2','tablabel2'); return false;" style="font-size:20px">企業を探す</a>
+      
    </p>
    <div id="tab1" class="tab">
    <form class="form-horizontal">
@@ -112,16 +113,16 @@
   			<a href="#" class="btn btn-default"style="width:130px;">業種</a>
 	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
 	 			 <ul class="dropdown-menu">
-			    <li><a href="#">関東</a></li>
-			    <li><a href="#">関西</a></li>
+			    <li><a href="#">IT・ソフトウェア</a></li>
+			    <li><a href="#">インフラ系</a></li>
 			  </ul>
 	</div>
 	<div class="btn-group" style="margin-top:10px;margin-left:10px;float:left;">
   			<a href="#" class="btn btn-default"style="width:130px;">開催時期</a>
 	 			 <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></a>
 	 			 <ul class="dropdown-menu">
-			    <li><a href="#">関東</a></li>
-			    <li><a href="#">関西</a></li>
+			    <li><a href="#">１週間以内</a></li>
+			    <li><a href="#">１ヶ月以内</a></li>
 			  </ul>
 	</div>
 	<button type="submit" class="btn btn-primary"style="margin-top:10px;margin-left:40px;float:left;">検索</button>		
@@ -224,20 +225,7 @@
    ChangeTab('tab1','tablabel1');
    --></script>
 
-    <div class="container">
-    	<form action="" method="get" class="">
-			<input type="text" class="" size="100" name="query" value=""  placeholder="Search"/>
-			<input type="submit" class="btn btn-default" value="検索" />
-			<p><a class="btn btn-default" role="button">絞り込み &raquo;</a></p>
-			<div class="container">
-				<label><input name="Fruit" type="checkbox" value="" />IT</label>
-				<label><input name="Fruit" type="checkbox" value="" />金融</label>
-				<label><input name="Fruit" type="checkbox" value="" />商社</label>
-				<label><input name="Fruit" type="checkbox" value="" />メーカー</label>
-			</div>
-		</form>
-	</div>
-
+	<!-- 以下イベントリスト -->
     <div class="container">
     	<div style="height: 100%;position: relative;min-height: 80px;margin-top: 30px;margin-bottom: 20px;">
 			<div style="float:left;width: 74.583333%">
@@ -287,7 +275,7 @@
 								  <td align=left width="200">2012年11月11日（金）　13:00-15:00</td>
 								 </tr>
 								 <tr>
-								 	<td colspan="2"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
+								 	<td colspan="2" class="mInfo"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
 								 </tr>
 								</table>
 							</div>
@@ -342,7 +330,7 @@
 								  <td align=left width="200">2012年11月11日（金）　13:00-15:00</td>
 								 </tr>
 								 <tr>
-								 	<td colspan="2"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
+								 	<td colspan="2" class="mInfo"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
 								 </tr>
 								</table>
 							</div>
@@ -397,7 +385,7 @@
 								  <td align=left width="200">2012年11月11日（金）　13:00-15:00</td>
 								 </tr>
 								 <tr>
-								 	<td colspan="2"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
+								 	<td colspan="2" class="mInfo"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
 								 </tr>
 								</table>
 							</div>
@@ -452,7 +440,7 @@
 								  <td align=left width="200">2012年11月11日（金）　13:00-15:00</td>
 								 </tr>
 								 <tr>
-								 	<td colspan="2"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
+								 	<td colspan="2" class="mInfo"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
 								 </tr>
 								</table>
 							</div>
@@ -507,7 +495,7 @@
 								  <td align=left width="200">2012年11月11日（金）　13:00-15:00</td>
 								 </tr>
 								 <tr>
-								 	<td colspan="2"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
+								 	<td colspan="2" class="mInfo"><font style="color:#00B4FF;font-size:25px">C3のCisanさんが参加します。</font></td>
 								 </tr>
 								</table>
 							</div>
