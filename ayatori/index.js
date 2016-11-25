@@ -14,7 +14,9 @@ var Page = function(){
     //点灯 ボタン
     this.clickBtnStart = function(){
         this.vincluLed.on();
-    };    
+        setTimeout(doSomething, 1000);
+        this.vincluLed.off();
+    };
     this.clickBtnStop = function(){
         this.vincluLed.off();  
     }
