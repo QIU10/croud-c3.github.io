@@ -12,6 +12,7 @@ function init(){
   $('#cooperation_companies').show();
   $('#senior_voices').show();
   $('#job_hunting_infomation').show();
+  $('.mInfo').hide();
 }
 
 function judge(){
@@ -27,6 +28,7 @@ function judge(){
     $('#student').show();
     $('#mypage').show();
     $('#rate_plan').hide();
+    $('.mInfo').show();
   } else if (userId == 'kigyo' && password == '1234') {
     $('#false-parameter').hide();
     $('#user_id').hide();
@@ -37,6 +39,7 @@ function judge(){
     $('#mypage').show();
     $('#senior_voices').hide();
     $('#job_hunting_infomation').hide();
+    $('.mInfo').show();
   } else{
     $('#false-parameter').show();
   }
