@@ -8,7 +8,8 @@ var Page = function(){
     //初期化
     this.init = function(){
        $("#btnStart").click( $.proxy(this.clickBtnStart,this) );
-        $("#btnStop").click( $.proxy(this.clickBtnStop,this) );
+        $("#btnStop1").click( $.proxy(this.clickBtnStop,this) );
+        $("#btnStop2").click( $.proxy(this.clickBtnStop,this) );
     };
     
     //点灯 ボタン
