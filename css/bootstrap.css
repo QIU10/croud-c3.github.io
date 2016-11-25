@@ -7464,3 +7464,13 @@ input[type="checkbox"]:disabled:checked:after,
 .carousel-caption h6 {
   color: inherit;
 }
+.modal-header {
+  border-radius: 5px 5px 0px 0px;
+  background-color: #333;
+  color: #eee;
+}
+.modal-footer {
+  border-radius: 0px 0px 5px 5px;
+  background-color: #eee;
+  color: #666;
+}
