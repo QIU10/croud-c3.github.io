@@ -18,38 +18,38 @@
 	
 
 
-	/* ¥(A)•\¦—Ìˆæ‘S‘Ì */
-	div.tabbox { margin-left:15%; padding:0px; width: 790px;}
+	/* ï¿½ï¿½(A)ï¿½\ï¿½ï¿½ï¿½Ìˆï¿½Sï¿½ï¿½ */
+	div.tabbox { margin-left:margin-right:auto; padding:0px; }
 
-	/* ¥(B)ƒ^ƒu•”•ª */
+	/* ï¿½ï¿½(B)ï¿½^ï¿½uï¿½ï¿½ï¿½ï¿½ */
 	p.tabs { margin: 0px; padding: 45px; }
 	p.tabs a {
-   		/* ¥(B-2)ƒŠƒ“ƒN‚ğƒ^ƒu‚Ì‚æ‚¤‚ÉŒ©‚¹‚é */
-   		display: block; width: 14em; float: left;
+   		/* ï¿½ï¿½(B-2)ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½^ï¿½uï¿½Ì‚æ‚¤ï¿½ÉŒï¿½ï¿½ï¿½ï¿½ï¿½ */
+   		display: block; float: left;
    		margin: 0px; padding: 3px;
    		text-align: center;
-   		border-radius: 12px 12px 0px 0px; /* Šp‚ğŠÛ‚­‚·‚é */
+   		border-radius: 12px 12px 0px 0px; /* ï¿½pï¿½ï¿½ï¿½Û‚ï¿½ï¿½ï¿½ï¿½ï¿½ */
    		
 	}
-	/* ¥(B-3)Šeƒ^ƒu‚Ì”zF */
-	p.tabs a.tab1 { margin-left:auto; background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #00B4FF;}
-	p.tabs a.tab2 { background-color: #FFFFFF; color: #515151; width:350px;border-bottom: solid 5px #EEEEEE;}
+	/* ï¿½ï¿½(B-3)ï¿½eï¿½^ï¿½uï¿½Ì”zï¿½F */
+	p.tabs a.tab1 { margin-left:margin-right:auto; background-color: #FFFFFF; color: #515151; width:520px;border-bottom: solid 5px #00B4FF;}
+	p.tabs a.tab2 { margin-left:margin-right:auto; background-color: #FFFFFF; color: #515151; width:520px;border-bottom: solid 5px #EEEEEE;}
 	p.tabs a:hover { color: #00B4FF; }
 
-	/* ¥(C)ƒ^ƒu’†g‚Ìƒ{ƒbƒNƒX */
+	/* ï¿½ï¿½(C)ï¿½^ï¿½uï¿½ï¿½ï¿½gï¿½Ìƒ{ï¿½bï¿½Nï¿½X */
 	div.tab {
-   	/* ¥(C-2)ƒ{ƒbƒNƒX‹¤’Ê‚Ì‘•ü */
+   	/* ï¿½ï¿½(C-2)ï¿½{ï¿½bï¿½Nï¿½Xï¿½ï¿½ï¿½Ê‚Ì‘ï¿½ï¿½ï¿½ */
    		height: 350px; overflow: hidden; clear: left;
    		padding:45px;
    		
-   		box-shadow:5px 5px 3px #EEEEEE;
+   		/*box-shadow:5px 5px 3px #EEEEEE;
     	-moz-box-shadow:5px 5px 3px #EEEEEE;
-    	-webkit-box-shadow:5px 5px 3px #EEEEEE;
+    	-webkit-box-shadow:5px 5px 3px #EEEEEE;*/
     	
 	}
-	/* ¥(C-3)Šeƒ{ƒbƒNƒX‚Ì”zF */
-	div#tab1 { border: 2px solid #FFFFFF; background-color: #FFFFFF; }
-	div#tab2 { border: 2px solid #FFFFFF; background-color: #FFFFFF; }
+	/* ï¿½ï¿½(C-3)ï¿½eï¿½{ï¿½bï¿½Nï¿½Xï¿½Ì”zï¿½F */
+	div#tab1 { border: 2px solid #FFFFFF; background-color: #FFFFFF; BORDER-LEFT:3px solid #00B4FF;BORDER-RIGHT:3px solid #00B4FF;BORDER-BOTTOM:3px solid #00B4FF;}
+	div#tab2 { border: 2px solid #FFFFFF; background-color: #FFFFFF; BORDER-LEFT:3px solid #00B4FF;BORDER-RIGHT:3px solid #00B4FF;BORDER-BOTTOM:3px solid #00B4FF;}
 	div.tab p { margin: 0.5em; }
 
 
