@@ -13,10 +13,8 @@ var Page = function(){
     
     //点灯 ボタン
     this.clickBtnStart = function(){
-        loopSleep(1, 1000, function(i){
-            this.vincluLed.on();
-        });
-        this.vincluLed.off();
+        this.vincluLed.on();
+        window.setTimeout("this.vincluLed.off()", 5000);
     };
     this.clickBtnStop = function(){
         this.vincluLed.off();  
