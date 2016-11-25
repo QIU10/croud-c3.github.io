@@ -10,6 +10,7 @@ var Page = function(){
        $("#btnStart").click( $.proxy(this.clickBtnStart,this) );
         $("#btnStop1").click( $.proxy(this.clickBtnStop,this) );
         $("#btnStop2").click( $.proxy(this.clickBtnStop,this) );
+        $("#btnStop3").click( $.proxy(this.clickBtnStop,this) );
     };
     
     //点灯 ボタン
