@@ -29,6 +29,15 @@ function judge(){
     $('#mypage').show();
     $('#rate_plan').hide();
     $('.mInfo').show();
+    
+    /*マイページ書き換え*/
+    elements = document.getElementsByClassName("mypURL");
+    
+    for (var i = 0, len = elements.length; i < len; i++) {
+    	elements[i].setAttribute("href","mypage_gaku.html");
+	}
+    
+    
   } else if (userId == 'kigyo' && password == '1234') {
     $('#false-parameter').hide();
     $('#user_id').hide();
@@ -40,6 +49,17 @@ function judge(){
     $('#senior_voices').hide();
     $('#job_hunting_infomation').hide();
     $('.mInfo').show();
+    
+    
+        /*マイページ書き換え*/
+    elements = document.getElementsByClassName("mypURL");
+    
+    for (var i = 0, len = elements.length; i < len; i++) {
+    	elements[i].setAttribute("href","mypage_kigyo.html");
+	}
+     
+
+    
   } else{
     $('#false-parameter').show();
   }
