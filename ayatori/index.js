@@ -1,9 +1,9 @@
 var Page = function(){
     //点灯させる
-   // this.vincluLed = new VincluLed(100,100);
+    this.vincluLed = new VincluLed(100,100);
    
     //激しく点滅させる
-    this.vincluLed = new VincluLed(100, 10);
+    // this.vincluLed = new VincluLed(100, 10);
     
     //初期化
     this.init = function(){
@@ -13,7 +13,6 @@ var Page = function(){
     
     //点灯 ボタン
     this.clickBtnStart = function(){
-        setTimeout("this.vincluLed.off()", 3000);
         this.vincluLed.on();
     };
     this.clickBtnStop = function(){
