@@ -10,46 +10,49 @@
 	}
 
 	div.top { background-color: #515151;
-	 	
+
  margin-left: auto;
  margin-right: auto;
 
 	}
-	
 
 
-	/* ��(A)�\���̈�S�� */
+
+	/* �ｿｽ�ｿｽ(A)�ｿｽ\�ｿｽ�ｿｽ�ｿｽﾌ茨ｿｽS�ｿｽ�ｿｽ */
 	div.tabbox { margin-left:margin-right:auto; padding:0px; }
 
-	/* ��(B)�^�u���� */
-	p.tabs { margin: 0px; padding: 45px; }
+	/* �ｿｽ�ｿｽ(B)�ｿｽ^�ｿｽu�ｿｽ�ｿｽ�ｿｽ�ｿｽ */
+	p.tabs { margin: 0px; padding: 0px; }
 	p.tabs a {
-   		/* ��(B-2)�����N���^�u�̂悤�Ɍ����� */
+   		/* �ｿｽ�ｿｽ(B-2)�ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽN�ｿｽ�ｿｽ�ｿｽ^�ｿｽu�ｿｽﾌよう�ｿｽﾉ鯉ｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ */
    		display: block; float: left;
-   		margin: 0px; padding: 3px;
+   		width:100%;
+   		margin: 0px;
+   		padding: 0px;
    		text-align: center;
-   		border-radius: 12px 12px 0px 0px; /* �p���ۂ����� */
-   		
+   		height:80px;
+   		/*border-radius: 12px 12px 0px 0px; /* �ｿｽp�ｿｽ�ｿｽ�ｿｽﾛゑｿｽ�ｿｽ�ｿｽ�ｿｽ�ｿｽ */
+
 	}
-	/* ��(B-3)�e�^�u�̔z�F */
-	p.tabs a.tab1 { margin-left:margin-right:auto; background-color: #FFFFFF; color: #515151; width:520px;border-bottom: solid 5px #00B4FF;}
-	p.tabs a.tab2 { margin-left:margin-right:auto; background-color: #FFFFFF; color: #515151; width:520px;border-bottom: solid 5px #EEEEEE;}
+	/* �ｿｽ�ｿｽ(B-3)�ｿｽe�ｿｽ^�ｿｽu�ｿｽﾌ配�ｿｽF */
+	p.tabs a.tab1 {padding:0px;background-color: #FFFFFF; color: #515151; width:50%;border-bottom: solid 5px #00B4FF;border-right: solid 2px #f5f5f5;}
+	p.tabs a.tab2 {padding:0px;background-color: #FFFFFF; color: #515151; width:50%;border-bottom: solid 5px #f5f5f5;border-left: solid 2px #f5f5f5;}
 	p.tabs a:hover { color: #00B4FF; }
 
-	/* ��(C)�^�u���g�̃{�b�N�X */
+	/* �ｿｽ�ｿｽ(C)�ｿｽ^�ｿｽu�ｿｽ�ｿｽ�ｿｽg�ｿｽﾌボ�ｿｽb�ｿｽN�ｿｽX */
 	div.tab {
-   	/* ��(C-2)�{�b�N�X���ʂ̑��� */
+   	/* �ｿｽ�ｿｽ(C-2)�ｿｽ{�ｿｽb�ｿｽN�ｿｽX�ｿｽ�ｿｽ�ｿｽﾊの托ｿｽ�ｿｽ�ｿｽ */
    		height: 350px; overflow: hidden; clear: left;
    		padding:45px;
-   		
+
    		/*box-shadow:5px 5px 3px #EEEEEE;
     	-moz-box-shadow:5px 5px 3px #EEEEEE;
     	-webkit-box-shadow:5px 5px 3px #EEEEEE;*/
-    	
+
 	}
-	/* ��(C-3)�e�{�b�N�X�̔z�F */
-	div#tab1 { border: 2px solid #FFFFFF; background-color: #FFFFFF; BORDER-LEFT:3px solid #00B4FF;BORDER-RIGHT:3px solid #00B4FF;BORDER-BOTTOM:3px solid #00B4FF;}
-	div#tab2 { border: 2px solid #FFFFFF; background-color: #FFFFFF; BORDER-LEFT:3px solid #00B4FF;BORDER-RIGHT:3px solid #00B4FF;BORDER-BOTTOM:3px solid #00B4FF;}
+	/* �ｿｽ�ｿｽ(C-3)�ｿｽe�ｿｽ{�ｿｽb�ｿｽN�ｿｽX�ｿｽﾌ配�ｿｽF */
+	div#tab1 { border: 2px solid #FFFFFF; background-color: #FFFFFF;}
+	div#tab2 { border: 2px solid #FFFFFF; background-color: #FFFFFF;}
 	div.tab p { margin: 0.5em; }
 
 
