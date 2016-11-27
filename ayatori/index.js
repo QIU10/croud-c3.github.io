@@ -52,7 +52,7 @@ $(function(){
 	userId = arg.id;
 	console.log(arg.id);
     console.log(userId);
-    */
+    
 });
 
 
