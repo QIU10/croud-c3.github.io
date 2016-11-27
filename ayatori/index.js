@@ -104,7 +104,7 @@ $("#mChange").click(function(){
     		
     		if(userId == "gakusei")
     			document.getElementById('myMeishi_gakusei').setAttribute('src',img);
-    		else if(userId == "gakusei")
+    		else if(userId == "kigyo")
     			document.getElementById('myMeishi_kigyo').setAttribute('src',img);
     		else
     			document.getElementById('myMeishi').setAttribute('src',img);
