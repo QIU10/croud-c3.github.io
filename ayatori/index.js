@@ -28,9 +28,7 @@ var p = new Page();
 var userId = "null";
 $(function(){
     p.init();
-    
-    /*
-    
+       
     //変数argはオブジェクトですよ
 	var arg = new Object;
 
