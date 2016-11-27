@@ -47,9 +47,20 @@ $(function(){
 	    arg[kv[0]]=kv[1];  // kv[0]がkey,kv[1]がvalue
 	}
 	
-	userId = arg.id;
-	console.log(arg.id);
-    console.log(userId);
+	
+			console.log(arg.id);
+			var uId = arg.id;
+	
+	if (arg.id != null){
+		userId = arg.id;
+		console.log(arg.id);
+	    console.log(userId);
+	    elements = document.getElementsByClassName(userId);
+	    
+	    for (i = 0, len = elements.length; i < len; i++) {
+	    	elements[i].setAttribute('style','display:block;');
+		}
+	}	
 });
 
 
@@ -76,17 +87,23 @@ function selectMeishi(obj){
 
 
 $("#mChange").click(function(){
-    
-    meishi = document.getElementById('myMeishi').getAttribute('src');
-    
+    var meishi;
+    if(userId != "null" && userId == "gakusei")
+ 	   meishi = document.getElementById('myMeishi_gakusei').getAttribute('src');
+    else
+    	meishi = document.getElementById('myMeishi').getAttribute('src');
+    	
     elements = document.getElementsByClassName('meishiList');
 
     for (var i = 0, len = elements.length; i < len; i++) {
     	state = elements[i].getAttribute('mselect');
     	if(state == "true"){
     		img = elements[i].getAttribute('src');
-    		document.getElementById('myMeishi').setAttribute('src',img);
     		
+    		if(userId != "null" && userId == "gakusei")
+    			document.getElementById('myMeishi_gakusei').setAttribute('src',img);
+    		else
+    			document.getElementById('myMeishi').setAttribute('src',img);
     		break;
     	}
 	}

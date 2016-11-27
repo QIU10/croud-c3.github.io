@@ -13,10 +13,11 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mypage.css">
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body onload="init();">
+<body>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -37,22 +38,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form id="navbar-form" class="navbar-form navbar-right" role="form">
-                <p id="student">ようこそ，gakuseiさん</p>
-                <p id="company">ようこそ，kigyoさん</p>
-                <div class="form-group">
-                    <input type="text" id="user_id" placeholder="UserID" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" placeholder="Password" class="form-control">
-                </div>
-                <button id="signin" type="button" class="btn btn-default" onclick="judge();">Sign in</button>
-                <p id="signup">
-                    <a href="signup.html">アカウントを持っていませんか？</a>
-                </p>
+                <p class="gakusei" style="display:none;">ようこそ，gakuseiさん</p>
+                <p class="kigyo" style="display:none;">ようこそ，kigyoさん</p>
                 <p id="mypage">
                     <a href="mypage.html">マイページ</a>
                 </p>
-                <p id="false-parameter"><font color="ff0000">IDまたはパスワードが間違っています</font></p>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
@@ -62,7 +52,8 @@
 <div class="jumbotron">
     <div class="container">
         <!--<h1>Casual Communication with Company</h1>-->
-        <p>ここに写真を貼る</p>
+        <img class="gakusei" src="image/neko.png" style="display:none;" width="150" height="150" id="icon">
+        <img class="kigyo" src="image/yamada.png"  style="display:none;" width="150" height="150" id="icon">
         <!--<p><a class="btn btn-default" href="#" role="button">Learn more &raquo;</a></p>-->
     </div>
 </div>
@@ -70,28 +61,149 @@
 <div class="container">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="true">プロフィール</a></li>
+        <li class=""><a href="" data-toggle="tab" aria-expanded="false">マイ企業</a></li>
+        <li class=""><a href="" data-toggle="tab" aria-expanded="false">メッセージBOX</a></li>
+        <li class=""><a href="" data-toggle="tab" aria-expanded="false">スケジュール</a></li>
         <li class=""><a href="#buisiness_card" data-toggle="tab" aria-expanded="false">名刺</a></li>
     </ul>
-    <div id="myTabContent" class="tab-content">
+    <div id="myPageContent" class="tab-content">
         <div class="tab-pane fade active in" id="profile">
-            <p>ここにプロフィール書くやでー</p>
+           <div class="gakusei" style="display:none;">
+            <h4>名前</h4>
+            <p>クラウド猫</p>
+            <h4>大学</h4>
+            <p>クラウド大学</p>
+            <h4>学部/研究科</h4>
+            <p>クラウド研究科</p>
+            <h4>学科/専攻</h4>
+            <p>クラウド先行</p>
+            <h4>趣味</h4>
+            <p>クラウドスパイラル</p>
+          </div>
+          
+          <div class="kigyo" style="display:none;">
+            <h4>名前</h4>
+            <p>山田　太郎</p>
+            <h4>企業名</h4>
+            <p>CCC</p>
+            <h4>職種</h4>
+            <p>代表取締役</p>
+            <h4>趣味</h4>
+            <p>クラウドスパイラル</p>
+          </div>
         </div>
         <div class="tab-pane fade" id="buisiness_card">
-            <p>ここに名刺を並べるやでー</p>
+            <center><h4>あなたの名刺</h4>
+                <p class="gakusei" style="display:none;"><img id="myMeishi_gakusei" src="image/meishi/meishi1.jpg" style="border:solid 1px #000000;"></p>
+                <p class="kigyo" style="display:none;"><img id="myMeishi_kigyo" src="image/meishi/meishi10.jpg" style="border:solid 1px #000000;"></p>
+                <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="gridModalLabel">名刺の変更</h4>
+                            </div>
+                            <div class="modal-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#motteru" data-toggle="tab">持ってるの</a></li>
+                                    <li><a href="#shinki" data-toggle="tab" class="gakusei" style="display:none;">新しく作る</a></li>
+                                </ul>
+                                <div id="modalContent" class="tab-content">
+                                	
+                                    <div class="tab-pane fade active in" id="motteru">
+                                    	<div class="gakusei" style="display:none;">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi1.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi2.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi3.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                    	</div>
+                                    	<div class="kigyo" style="display:none;">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi10.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi11.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">                                    	
+                                    	</div>
+                                    </div>
+                                    
+                                    <div class="tab-pane fade" id="shinki">
+                                        <div class="gakusei" style="display:none;">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi4.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi5.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi6.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi7.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi8.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi9.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi16.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="mChange">更新する</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセルする</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                 <img id="kokan0" style="width:100%;" src="image/koukan0.jpg">
+                                 <img id="kokan1" style="width:100%;display:none;" src="image/koukan1.gif">
+                                 <div id="kokan2" style="width:100%;display:none;">
+                                 	<p class="gakusei" style="display:none;"><img style="border:solid 1px #000000;" src="image/meishi/meishi10.jpg"></p>
+                                 	<p class="kigyo" style="display:none;"><img style="border:solid 1px #000000;" src="image/meishi/meishi1.jpg"></p>
+                                 	<button type="button" class="btn btn-primary" data-dismiss="modal" id="closebtn">閉じる</button>
+                            	</div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <div class="bd-example bd-example-padded-bottom">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal">
+                        変更
+                    </button>
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="mKokan">
+                        名刺交換
+                    </button>
+                </div>
+            </center>
+            <center><h4>交換した名刺一覧</h4>
+            <div class="gakusei" style="display:none;">
+	            <img src="image/meishi/meishi0.jpg" oninput="button" id="btnStop1" class="btn">
+	            <img src="image/meishi/meishi10.jpg" oninput="button" id="btnStart" class="btn">
+	            <img src="image/meishi/meishi11.jpg" oninput="button" id="btnStop2" class="btn">
+	        </div>
+	        <div class="kigyo" style="display:none;">
+		        <img src="image/meishi/meishi12.jpg" oninput="button" id="btnStop1" class="btn">
+	            <img src="image/meishi/meishi4.jpg" oninput="button" id="btnStart" class="btn">
+	            <img src="image/meishi/meishi13.jpg" oninput="button" id="btnStop2" class="btn">
+	            <img src="image/meishi/meishi15.jpg" oninput="button" id="btnStop3" class="btn">
+	        </div>
+            <div id='btnContainer' class="Container">
+                <!--<input type='button' value='点灯'  id='btnStart' class='btn'>-->
+
+                <!--<p class="text">-->
+                    <!--<br>-->
+                    <!--点灯 → AYATORIが光ります。<br>-->
+                    <!--消灯 → AYATORIの光を消します。-->
+                <!--</p>-->
+            </div>
+            </center>
         </div>
     </div>
     <hr>
-
-    <footer>
-        <p>Copyright © 2016- Team C3.</p>
-    </footer>
+    <div class="container" align="center">
+        <footer>
+            <p align="center">Copyright © 2016- Team C3.</p>
+        </footer>
+    </div>
 </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
 <script src="js/bootstrap.min.js"></script>
 
 <script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script type="text/javascript" src="https://jsdo.it/AYATORI/ayatori_library/js"></script>
+<script type="text/javascript" src="ayatori/index.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <!--<script>-->
