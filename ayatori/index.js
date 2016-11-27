@@ -90,7 +90,7 @@ $("#mChange").click(function(){
     var meishi;
     if(userId == "gakusei")
  	   meishi = document.getElementById('myMeishi_gakusei').getAttribute('src');
- 	if(userId == "kigyo")
+ 	else if(userId == "kigyo")
  		 meishi = document.getElementById('myMeishi_kigyo').getAttribute('src');
     else
     	meishi = document.getElementById('myMeishi').getAttribute('src');
