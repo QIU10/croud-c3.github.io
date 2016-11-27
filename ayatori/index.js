@@ -1,4 +1,3 @@
-
 var Page = function(){
     //点灯させる
 	this.vincluLed = new VincluLed(100,100);
@@ -26,8 +25,34 @@ var Page = function(){
 };
 
 var p = new Page();
+var userId = "null";
 $(function(){
     p.init();
+    
+    /*
+    
+    //変数argはオブジェクトですよ
+	var arg = new Object;
+
+	// 変数pairにURLの?の後ろを&で区切ったものを配列にして代入
+	var pair=location.search.substring(1).split('&');
+	    // location.search.substring(1)は、URLから最初の1文字 (?記号) を除いた文字列を取得する
+	    // .split('&')は&で区切り配列に分割する
+
+
+	// for文でrairがある限りループさせる
+	for(var i=0;pair[i];i++) {
+		// 変数kvにpairを=で区切り配列に分割する
+	    var kv = pair[i].split('=');// kvはkey-value
+		
+		// 最初に定義したオブジェクトargに連想配列として格納
+	    arg[kv[0]]=kv[1];  // kv[0]がkey,kv[1]がvalue
+	}
+	
+	userId = arg.id;
+	console.log(arg.id);
+    console.log(userId);
+    */
 });
 
 
