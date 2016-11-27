@@ -88,8 +88,10 @@ function selectMeishi(obj){
 
 $("#mChange").click(function(){
     var meishi;
-    if(userId != "null" && userId == "gakusei")
+    if(userId == "gakusei")
  	   meishi = document.getElementById('myMeishi_gakusei').getAttribute('src');
+ 	if(userId == "kigyo")
+ 		 meishi = document.getElementById('myMeishi_kigyo').getAttribute('src');
     else
     	meishi = document.getElementById('myMeishi').getAttribute('src');
     	
@@ -100,8 +102,10 @@ $("#mChange").click(function(){
     	if(state == "true"){
     		img = elements[i].getAttribute('src');
     		
-    		if(userId != "null" && userId == "gakusei")
+    		if(userId == "gakusei")
     			document.getElementById('myMeishi_gakusei').setAttribute('src',img);
+    		else if(userId == "gakusei")
+    			document.getElementById('myMeishi_kigyo').setAttribute('src',img);
     		else
     			document.getElementById('myMeishi').setAttribute('src',img);
     		break;
