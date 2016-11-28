@@ -11,6 +11,8 @@ var Page = function(){
         $("#btnStop1").click( $.proxy(this.clickBtnStop,this) );
         $("#btnStop2").click( $.proxy(this.clickBtnStop,this) );
         $("#btnStop3").click( $.proxy(this.clickBtnStop,this) );
+        $("#ayatoriStart").click( $.proxy(this.clickBtnStart,this) );
+        $("#closebtn").click( $.proxy(this.clickBtnStop,this) );
         
     };
     
@@ -62,9 +64,6 @@ $(function(){
 		}
 	}	
 });
-
-
-this.vincluLed = new VincluLed(100, 10);
 
 
 function selectMeishi(obj){
@@ -134,6 +133,7 @@ $("#mChange").click(function(){
 
 $("#mKokan").click(function(){
 
+
 	document.getElementById('kokan2').setAttribute('style','width:100%;display:none;');
     document.getElementById('kokan0').setAttribute('style','width:100%;display:block;');
     
@@ -145,12 +145,9 @@ $("#mKokan").click(function(){
 	setTimeout(function(){
 		document.getElementById('kokan1').setAttribute('style','width:100%;display:none;');
      	document.getElementById('kokan2').setAttribute('style','width:100%;display:block;');
-    	this.vincluLed.on();
+    	$("#ayatoriStart").click();
 	},15000);
 
-	setTimeout(function(){
-    	this.vincluLed.off();
-	},20000);
 
 		
 
