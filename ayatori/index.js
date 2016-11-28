@@ -7,10 +7,8 @@ var Page = function(){
     
     //初期化
     this.init = function(){
-       $("#btnStart").click( $.proxy(this.clickBtnStart,this) );
-        $("#btnStop1").click( $.proxy(this.clickBtnStop,this) );
-        $("#btnStop2").click( $.proxy(this.clickBtnStop,this) );
-        $("#btnStop3").click( $.proxy(this.clickBtnStop,this) );
+       $(".btnStart").click( $.proxy(this.clickBtnStart,this) );
+        $(".btnStop").click( $.proxy(this.clickBtnStop,this) );
         $("#ayatoriStart").click( $.proxy(this.clickBtnStart,this) );
         $("#closebtn").click( $.proxy(this.clickBtnStop,this) );
         
