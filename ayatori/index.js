@@ -59,6 +59,7 @@ $(function(){
 	    
 	    for (i = 0, len = elements.length; i < len; i++) {
 	    	elements[i].setAttribute('style','display:block;');
+	    	console.log(elements[i]);
 		}
 		
 		if (userId=="kigyo"){
