@@ -1,5 +1,20 @@
-$(function(){
-    //変数argはオブジェクトですよ
+
+<!-- 学生用と企業用を切り替える(Javascript)-->
+function init(){
+  $('#false-parameter').hide();
+  $('#student').hide();
+  $('#company').hide();
+  $('#signup').show();
+  $('#mypage').hide();
+  $('#event_list').show();
+  $('#manual').show();
+  $('#rate_plan').show();
+  $('#cooperation_companies').show();
+  $('#senior_voices').show();
+  $('#job_hunting_infomation').show();
+  $('.mInfo').hide();
+  
+      //変数argはオブジェクトですよ
 	var arg = new Object;
 
 	// 変数pairにURLの?の後ろを&で区切ったものを配列にして代入
@@ -60,23 +75,8 @@ $(function(){
 
 		}
 	}	
-});
-
-
-<!-- 学生用と企業用を切り替える(Javascript)-->
-function init(){
-  $('#false-parameter').hide();
-  $('#student').hide();
-  $('#company').hide();
-  $('#signup').show();
-  $('#mypage').hide();
-  $('#event_list').show();
-  $('#manual').show();
-  $('#rate_plan').show();
-  $('#cooperation_companies').show();
-  $('#senior_voices').show();
-  $('#job_hunting_infomation').show();
-  $('.mInfo').hide();
+  
+  
 }
 
 
