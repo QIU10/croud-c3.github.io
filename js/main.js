@@ -23,25 +23,20 @@ $(function(){
 	
 	if (arg.id != null){
 		userId = arg.id;
-		console.log(arg.id);
-	    console.log(userId);
-	    elements = document.getElementsByClassName(userId);
-	    
-//	    for (i = 0, len = elements.length; i < len; i++) {
-//	    	elements[i].setAttribute('style','display:block;');
-//		}
+
+		$('#false-parameter').hide();
+		$('#user_id').hide();
+		$('#password').hide();
+	    $('#signin').hide();
+	    $('#signup').hide();
+		$('#mypage').show();
+	    $('.mInfo').show();		    
 
 		if (userId=="kigyo"){
-			$('#false-parameter').hide();
-		    $('#user_id').hide();
-		    $('#password').hide();
-		    $('#signin').hide();
-		    $('#signup').hide();
 		    $('#company').show();
-		    $('#mypage').show();
+
 		    $('#senior_voices').hide();
 		    $('#job_hunting_infomation').hide();
-		    $('.mInfo').show();
 		    
 	        elements = document.getElementsByClassName("mypURL");
     
@@ -52,21 +47,13 @@ $(function(){
 			elements = document.getElementById("totop").setAttribute("href","index.html?id=kigyo");
 		    
 		}else{
-		    $('#false-parameter').hide();
-		    $('#user_id').hide();
-		    $('#password').hide();
-		    $('#signin').hide();
-		    $('#signup').hide();
-		    $('#student').show();
-		    $('#mypage').show();
-		    $('#rate_plan').hide();
-		    $('.mInfo').show();
-		    
+			   $('#student').show();
+	    	$('#rate_plan').hide();
 		    /*マイページ書き換え*/
 		    elements = document.getElementsByClassName("mypURL");
 		    
 		    for (var i = 0, len = elements.length; i < len; i++) {
-		    	elements[i].setAttribute("href","mypage_gaku.html?id=gakusei");
+		    	elements[i].setAttribute("href","mypage.html?id=gakusei");
 			}		
 
 			elements = document.getElementById("totop").setAttribute("href","index.html?id=gakusei");
