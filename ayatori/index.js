@@ -131,7 +131,7 @@ $("#mChange").click(function(){
 
 $("#mKokan").click(function(){
 
-
+	$("#closebtn").click();
 	document.getElementById('kokan2').setAttribute('style','width:100%;display:none;');
     document.getElementById('kokan0').setAttribute('style','width:100%;display:block;');
     
