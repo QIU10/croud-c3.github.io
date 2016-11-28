@@ -60,6 +60,24 @@ $(function(){
 	    for (i = 0, len = elements.length; i < len; i++) {
 	    	elements[i].setAttribute('style','display:block;');
 		}
+		
+		if (userId=="kigyo"){
+	        elements = document.getElementsByClassName("mypURL");
+		    for (var i = 0, len = elements.length; i < len; i++) {
+		    	elements[i].setAttribute("href","mypage.html?id=kigyo");
+			}
+			elements = document.getElementById("totop").setAttribute("href","index.html?id=kigyo");
+		    
+		}else{
+		    /*マイページ書き換え*/
+		    elements = document.getElementsByClassName("mypURL");
+		    
+		    for (var i = 0, len = elements.length; i < len; i++) {
+		    	elements[i].setAttribute("href","mypage_gaku.html?id=gakusei");
+			}		
+			elements = document.getElementById("totop").setAttribute("href","index.html?id=gakusei");
+
+		}
 	}	
 });
 
