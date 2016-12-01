@@ -17,7 +17,7 @@
 
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body onload="init();">
+<body">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -31,17 +31,12 @@
                 <span class="icon-bar"></span>
             </button>
             <p>
-                <a href="index.html">
-                    <img style="margin-top: 10px" src="image/logo.gif" />
-                </a>
+                    <img style="margin-top:30px;height:50px;" src="image/logo.gif" />
             </p>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <form id="navbar-form" class="navbar-form navbar-right" role="form">
                 <p>ようこそ，kigyoさん</p>
-                <p>
-                    <a href="mypage_kigyo.html">マイページ</a>
-                </p>
             </form>
         </div><!--/.navbar-collapse -->
     </div>
@@ -75,9 +70,9 @@
             <h4>趣味</h4>
             <p>クラウドスパイラル</p>
         </div>
-        <div class="tab-pane fade" id="buisiness_card">
+		<div class="tab-pane fade" id="buisiness_card">
             <center><h4>あなたの名刺</h4>
-                <img src="image/meishi/meishi10.jpg"><br>
+                <p class="kigyo" style="display:none;"><img id="myMeishi_kigyo" src="image/meishi/meishi10.jpg" style="border:solid 1px #000000;"></p>
                 <div id="gridSystemModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -90,14 +85,17 @@
                                     <li class="active"><a href="#motteru" data-toggle="tab">持ってるの</a></li>
                                 </ul>
                                 <div id="modalContent" class="tab-content">
+                                	
                                     <div class="tab-pane fade active in" id="motteru">
-                                        <img src="image/meishi/meishi10.jpg">
-                                        <img src="image/meishi/meishi11.jpg">
+
+                                    	<div class="kigyo" style="display:none;">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi10.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">
+                                        <img class="meishiList" mselect="false" src="image/meishi/meishi11.jpg" onclick="selectMeishi(this)" style="border:solid 1px #000000">                                    	
+                                    	</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">更新する</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセルする</button>
                             </div>
                         </div>
@@ -107,39 +105,13 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
-                                    <!--<ol class="carousel-indicators">-->
-                                    <!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
-                                    <!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
-                                    <!--</ol>-->
-
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner" role="listbox">
-                                        <div class="item active">
-                                            <img src="image/koukan0.jpg">
-                                            <!--<div class="carousel-caption">-->
-                                            <!--...-->
-                                            <!--</div>-->
-                                        </div>
-                                        <div class="item">
-                                            <img src="image/koukan1.gif">
-                                            <!--<div class="carousel-caption">-->
-                                            <!--...-->
-                                            <!--</div>-->
-                                        </div>
-                                    </div>
-
-                                    <!--&lt;!&ndash; Controls &ndash;&gt;-->
-                                    <!--<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">-->
-                                    <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
-                                    <!--<span class="sr-only">Previous</span>-->
-                                    <!--</a>-->
-                                    <!--<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">-->
-                                    <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
-                                    <!--<span class="sr-only">Next</span>-->
-                                    <!--</a>-->
-                                </div>
+                            	<img src="image/btn.gif" oninput="button" id="ayatoriStart">
+                                 <img id="kokan0" style="width:100%;" src="image/koukan0.jpg">
+                                 <img id="kokan1" style="width:100%;display:none;" src="image/koukan1.gif">
+                                 <div id="kokan2" style="width:100%;display:none;">
+                                 	<p class="kigyo" style="display:none;"><img style="border:solid 1px #000000;" src="image/meishi/meishi1.jpg"></p>
+                                 	<button type="button" class="btn btn-primary" data-dismiss="modal" id="closebtn">閉じる</button>
+                            	</div>
                             </div>
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
@@ -148,26 +120,28 @@
                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal">
                         変更
                     </button>
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" id="mKokan">
                         名刺交換
                     </button>
                 </div>
             </center>
             <center><h4>交換した名刺一覧</h4>
-            <img src="image/meishi/meishi12.jpg" oninput="button" id="btnStop1" class="btn">
-            <img src="image/meishi/meishi4.jpg" oninput="button" id="btnStart" class="btn">
-            <img src="image/meishi/meishi13.jpg" oninput="button" id="btnStop2" class="btn">
-            <img src="image/meishi/meishi15.jpg" oninput="button" id="btnStop3" class="btn">
-            <!--<div id='btnContainer' class="Container">-->
-            <!--<input type='button' value='点灯'  id='btnStart' class='btn'>-->
-            <!--<input type='button' value='消灯'  id='btnStop'  class='btn'>-->
+	        <div class="kigyo" style="display:none;">
+		        <img src="image/meishi/meishi12.jpg" oninput="button" class="btn btnStop">
+	            <img src="image/meishi/meishi4.jpg" oninput="button"  class="btn btnStart">
+	            <img src="image/meishi/meishi13.jpg" oninput="button" class="btn btnStop">
+	            <img src="image/meishi/meishi15.jpg" oninput="button" class="btn btnStop">
+	        </div>
+            <div id='btnContainer' class="Container">
+                <!--<input type='button' value='点灯'  id='btnStart' class='btn'>-->
 
-            <!--<p class="text">-->
-            <!--<br>-->
-            <!--点灯 → AYATORIが光ります。<br>-->
-            <!--消灯 → AYATORIの光を消します。-->
-            <!--</p>-->
-            <!--</div>--></center>
+                <!--<p class="text">-->
+                    <!--<br>-->
+                    <!--点灯 → AYATORIが光ります。<br>-->
+                    <!--消灯 → AYATORIの光を消します。-->
+                <!--</p>-->
+            </div>
+            </center>
         </div>
     </div>
     <hr>
